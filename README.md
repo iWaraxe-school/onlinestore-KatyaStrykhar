@@ -16,12 +16,12 @@
 [Faker](https://github.com/DiUS/java-faker)
 
 ### VideoLectures
-- [ 04.oop.u1. Classes & Objects] https://drive.google.com/file/d/1xAtAvvy9bcexDkEm1EWAjcowWyevR8al/view?usp=sharing
-- [ 04.oop.u2] https://drive.google.com/file/d/1qqcciuQjriqlP-CcLBf1MYxkU5ItGAAS/view?usp=sharing
-- [ 04.oop.u3] https://drive.google.com/file/d/1feJG7ydl9qM95iAnZoX\_W6JKDi2k\_W-M/view?usp=sharing
-- [ 04.oop.u4] https://drive.google.com/file/d/1a0Nc7j81gvjPuU6zzAsaYpI8KAZITWeX/view?usp=sharing
-- [ 04.oop.u5] https://drive.google.com/file/d/1TsJZpwbCZx-AbhM0qJOxK9zEmPRJaHlD/view?usp=sharing
-- [ 04.oop.u6] https://drive.google.com/file/d/1xAtAvvy9bcexDkEm1EWAjcowWyevR8al/view?usp=sharing
+- [ 04.oop.u1. Classes & Objects] (https://drive.google.com/file/d/1xAtAvvy9bcexDkEm1EWAjcowWyevR8al/view?usp=sharing)
+- [ 04.oop.u2] (https://drive.google.com/file/d/1qqcciuQjriqlP-CcLBf1MYxkU5ItGAAS/view?usp=sharing)
+- [ 04.oop.u3] (https://drive.google.com/file/d/1feJG7ydl9qM95iAnZoX\_W6JKDi2k\_W-M/view?usp=sharing)
+- [ 04.oop.u4] (https://drive.google.com/file/d/1a0Nc7j81gvjPuU6zzAsaYpI8KAZITWeX/view?usp=sharing)
+- [ 04.oop.u5] (https://drive.google.com/file/d/1TsJZpwbCZx-AbhM0qJOxK9zEmPRJaHlD/view?usp=sharing)
+- [ 04.oop.u6] (https://drive.google.com/file/d/1xAtAvvy9bcexDkEm1EWAjcowWyevR8al/view?usp=sharing)
 
 ### Task #3
 
