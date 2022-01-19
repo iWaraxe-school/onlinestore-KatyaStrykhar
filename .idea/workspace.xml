@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6af790c-f434-481d-9c9f-05b4cb3f347c" name="Changes" comment="rename">
-      <change afterPath="$PROJECT_DIR$/General Store/consoleApp/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/General Store/domain/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/General Store/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/General Store/store/pom.xml" afterDir="false" />
+    <list default="true" id="e6af790c-f434-481d-9c9f-05b4cb3f347c" name="Changes" comment="commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +15,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="branch_2.maven" />
+        <entry key="$PROJECT_DIR$" value="2.maven" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,7 +39,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b8c8fc9f-5056-4fae-ab1b-e8ee265bf395" name="Changes" comment="" />
+      <changelist id="e6af790c-f434-481d-9c9f-05b4cb3f347c" name="Changes" comment="" />
       <created>1642077562182</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -55,7 +52,21 @@
       <option name="project" value="LOCAL" />
       <updated>1642078916180</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="new modules">
+      <created>1642170534517</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1642170534517</updated>
+    </task>
+    <task id="LOCAL-00003" summary="new modules">
+      <created>1642170867529</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1642170867529</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -69,7 +80,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/feedback" />
+                        <option value="3.OOP" />
                       </list>
                     </value>
                   </entry>
