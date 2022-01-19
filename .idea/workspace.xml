@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6af790c-f434-481d-9c9f-05b4cb3f347c" name="Changes" comment="commit">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store/consoleApp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/General Store/consoleApp/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store/domain/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/General Store/domain/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/General Store/General Store.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/General Store/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/General Store/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store/store/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/General Store/store/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +36,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="corretto-1.8" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -73,7 +69,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642170867529</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="commit">
+      <created>1642610001327</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1642610001327</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -101,6 +104,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="new modules" />
-    <option name="LAST_COMMIT_MESSAGE" value="new modules" />
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
 </project>

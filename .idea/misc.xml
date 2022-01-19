@@ -6,13 +6,6 @@
         <option value="$PROJECT_DIR$/General Store/pom.xml" />
       </list>
     </option>
-    <option name="ignoredFiles">
-      <set>
-        <option value="$PROJECT_DIR$/General Store/consoleApp/pom.xml" />
-        <option value="$PROJECT_DIR$/General Store/domain/pom.xml" />
-        <option value="$PROJECT_DIR$/General Store/store/pom.xml" />
-      </set>
-    </option>
   </component>
   <component name="ProjectRootManager" version="2" default="true">
     <output url="file://$PROJECT_DIR$/out" />
