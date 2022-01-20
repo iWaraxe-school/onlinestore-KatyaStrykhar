@@ -18,8 +18,8 @@ import java.util.Set;
 
 
 public class Store {
-    private List<Class> categories;
-    private List<List<Product>> bigProdList;
+    private final List<Class> categories;
+    private final List<List<Product>> bigProdList;
 
     public Store() {
         categories = new ArrayList<Class>();
@@ -28,17 +28,26 @@ public class Store {
         this.createListProductLists();
     }
 
-    public void createListCategories(){
-        Reflections reflection = new Reflections(Category.class, new SubTypesScanner());
+    private void createListCategories(){
+        Reflections reflection = new Reflections(Category.getClass(), new SubTypesScanner()); // не могу сообразить, каким указать первый аргумент
         Set<Class<? extends Category>> subTypes = reflection.getSubTypesOf(Category.class);
-        for(Class<? extends Category> type : subTypes) categories.add(type);
+        categories.addAll(subTypes);
     }
 
-    public void createListProductLists(){
+    private void createListProductLists(){
         for ( Class type : categories){
-            Reflections reflection = new Reflections(type.class);
-            Method getList = type.getMethod ("getProductList");
-            List<Product> temp = (List<Product>) getList.invoke();
+            /* Reflections reflection = new Reflections(type.getClass());
+            НУЖНА ЭТА СТРОЧКА? */
+            Method getList = null;
+            try {
+                getList = type.getMethod ("getProductList");
+            } catch (NoSuchMethodException e) {
+                e.printStackTrace();
+            }
+            List<Product> temp = null;
+            if (getList != null)
+                temp = (List<Product>) getList.invoke();
+                // Здесь пишет ошибку. Если правильно поняла, то идее не нравятся скобки
             bigProdList.add(temp);
 
         }
@@ -49,5 +58,7 @@ public class Store {
         return categories;
     }
 
-
+    public List<List<Product>> getBigProdList() {
+        return bigProdList;
+    }
 }
