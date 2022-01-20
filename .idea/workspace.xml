@@ -5,32 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6af790c-f434-481d-9c9f-05b4cb3f347c" name="Changes" comment="new packages, classes, dependencies">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_javafaker_javafaker_1_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_mifmif_generex_1_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__dk_brics_automaton_automaton_1_11_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_28_0_GA.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_reflections_reflections_0_10_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_32.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_android_1_23.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/General Store/consoleApp/src/main/java/by/issoft/storeApp/StoreApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/General Store/domain/src/main/java/by/issoft/domain/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/General Store/domain/src/main/java/by/issoft/domain/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/General Store/domain/src/main/java/by/issoft/domain/categories/BikeCategory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/General Store/domain/src/main/java/by/issoft/domain/categories/MilkCategory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/General Store/domain/src/main/java/by/issoft/domain/categories/PhoneCategory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/General Store/store/src/main/java/by/issoft/store/RandomStorePopulator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/General Store/store/src/main/java/by/issoft/store/Store.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store/consoleApp/consoleApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/General Store/consoleApp/consoleApp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store/consoleApp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/General Store/consoleApp/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store/domain/domain.iml" beforeDir="false" afterPath="$PROJECT_DIR$/General Store/domain/domain.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store/domain/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/General Store/domain/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store/store/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/General Store/store/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store/store/store.iml" beforeDir="false" afterPath="$PROJECT_DIR$/General Store/store/store.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store/domain/src/main/java/by/issoft/domain/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/General Store/domain/src/main/java/by/issoft/domain/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store/domain/src/main/java/by/issoft/domain/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/General Store/domain/src/main/java/by/issoft/domain/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store/domain/src/main/java/by/issoft/domain/categories/BikeCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/General Store/domain/src/main/java/by/issoft/domain/categories/BikeCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store/domain/src/main/java/by/issoft/domain/categories/MilkCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/General Store/domain/src/main/java/by/issoft/domain/categories/MilkCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store/domain/src/main/java/by/issoft/domain/categories/PhoneCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/General Store/domain/src/main/java/by/issoft/domain/categories/PhoneCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store/store/src/main/java/by/issoft/store/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/General Store/store/src/main/java/by/issoft/store/Store.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642611209238</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="new packages, classes, dependencies">
+      <created>1642687748347</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1642687748347</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

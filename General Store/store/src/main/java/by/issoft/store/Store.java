@@ -31,17 +31,15 @@ public class Store {
     public void createListCategories(){
         Reflections reflection = new Reflections(Category.class, new SubTypesScanner());
         Set<Class<? extends Category>> subTypes = reflection.getSubTypesOf(Category.class);
-        for(<Class<? extends Category> type : subTypes){
-            categories.add(type.getClass());
-        }
+        for(Class<? extends Category> type : subTypes) categories.add(type);
     }
 
     public void createListProductLists(){
-        for ( Class class : categories){
-            /* пытаюсь получить объект класса Method, зная название метода
-            getProductList() класса Category (который неявно есть у всех субклассов)*/
-            Method getList = class.getMethod("getProductList");
-
+        for ( Class type : categories){
+            Reflections reflection = new Reflections(type.class);
+            Method getList = type.getMethod ("getProductList");
+            List<Product> temp = (List<Product>) getList.invoke();
+            bigProdList.add(temp);
 
         }
 

@@ -10,6 +10,11 @@ public class Product {
         this.name = name;
         this.rate = rate;
         this.price = price;
+        setToProductList();
+    }
+
+    private void setToProductList() {
+
     }
 
     public String getName() {

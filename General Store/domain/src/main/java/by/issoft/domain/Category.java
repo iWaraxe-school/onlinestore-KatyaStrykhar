@@ -8,7 +8,6 @@ abstract public class Category {
     protected final List<Product> productList;
 
     public Category() {
-        this(name);
         productList = new ArrayList<Product>();
     }
 
