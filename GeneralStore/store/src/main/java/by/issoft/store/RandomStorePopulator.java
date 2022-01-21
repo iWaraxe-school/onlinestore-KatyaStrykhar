@@ -29,7 +29,7 @@ public class RandomStorePopulator {
 
     public void toCreate(Category category) {
         String cat = category.getName();
-        int i = 5 + ((int) Math.random()*6);
+        int i = 5 + ((int) (Math.random() * 6));
 
         for (int j = 0; j<i; j++){
             double rate;
