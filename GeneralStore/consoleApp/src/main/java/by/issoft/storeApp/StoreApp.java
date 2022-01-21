@@ -15,9 +15,11 @@ public class StoreApp {
         MilkCategory milk = new MilkCategory();
         PhoneCategory phone = new PhoneCategory();
         BikeCategory bike = new BikeCategory();
+        //по дальнейшей логике стоило бы наверное запретить создание больше одного экземпляра каждого класса
 
 
         RandomStorePopulator populator = new RandomStorePopulator();
+
         populator.toCreate(milk);//create random quantity products with faker
         populator.toCreate(phone);
         populator.toCreate(bike);
