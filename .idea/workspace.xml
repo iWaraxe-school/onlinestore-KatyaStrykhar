@@ -6,7 +6,23 @@
   <component name="ChangeListManager">
     <list default="true" id="e6af790c-f434-481d-9c9f-05b4cb3f347c" name="Changes" comment="доработала класс Store">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store/consoleApp/src/main/java/by/issoft/storeApp/StoreApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/General Store/consoleApp/src/main/java/by/issoft/storeApp/StoreApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store/General Store.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GeneralStore/GeneralStore.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store/consoleApp/consoleApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GeneralStore/consoleApp/consoleApp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store/consoleApp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GeneralStore/consoleApp/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store/consoleApp/src/main/java/by/issoft/storeApp/StoreApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/GeneralStore/consoleApp/src/main/java/by/issoft/storeApp/StoreApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store/domain/domain.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GeneralStore/domain/domain.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store/domain/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GeneralStore/domain/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store/domain/src/main/java/by/issoft/domain/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/GeneralStore/domain/src/main/java/by/issoft/domain/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store/domain/src/main/java/by/issoft/domain/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/GeneralStore/domain/src/main/java/by/issoft/domain/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store/domain/src/main/java/by/issoft/domain/categories/BikeCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/GeneralStore/domain/src/main/java/by/issoft/domain/categories/BikeCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store/domain/src/main/java/by/issoft/domain/categories/MilkCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/GeneralStore/domain/src/main/java/by/issoft/domain/categories/MilkCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store/domain/src/main/java/by/issoft/domain/categories/PhoneCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/GeneralStore/domain/src/main/java/by/issoft/domain/categories/PhoneCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GeneralStore/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store/store/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GeneralStore/store/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store/store/src/main/java/by/issoft/store/RandomStorePopulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/GeneralStore/store/src/main/java/by/issoft/store/RandomStorePopulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store/store/src/main/java/by/issoft/store/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/GeneralStore/store/src/main/java/by/issoft/store/Store.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store/store/src/main/java/by/issoft/store/StoreHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/GeneralStore/store/src/main/java/by/issoft/store/StoreHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store/store/store.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GeneralStore/store/store.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +85,11 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\katyastrykhar\StoreAppProject\GeneralStore" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.StoreApp (1)">
     <configuration name="StoreApp (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -191,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642769232216</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="доработала класс Store">
+      <created>1642770223595</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1642770223595</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
