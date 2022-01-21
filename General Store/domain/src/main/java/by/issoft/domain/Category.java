@@ -19,6 +19,10 @@ abstract public class Category {
         return productList;
     }
 
+    public void putProductToList (Product product){
+        productList.add(product);
+    }
+
     @Override
     public String toString() {
         return name;

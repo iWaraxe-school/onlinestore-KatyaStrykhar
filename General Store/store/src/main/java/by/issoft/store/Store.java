@@ -21,20 +21,20 @@ public class Store {
     private final List<Class> categories;
     private final List<List<Product>> bigProdList;
 
-    public Store() {
-        categories = new ArrayList<Class>();
+    public Store(StoreHelper helper) {
+        categories = helper.getCategories();
         bigProdList = new ArrayList<List<Product>>();
-        this.createListCategories();
         this.createListProductLists();
     }
-
+/*
     private void createListCategories(){
         Reflections reflection = new Reflections(Category.getClass(), new SubTypesScanner()); // не могу сообразить, каким указать первый аргумент
         Set<Class<? extends Category>> subTypes = reflection.getSubTypesOf(Category.class);
         categories.addAll(subTypes);
     }
+*/
 
-    private void createListProductLists(){
+    public void createListProductLists(){
         for ( Class type : categories){
             try {
                 Method getList = type.getDeclaredMethod("getProductList");
@@ -45,7 +45,6 @@ public class Store {
             }
 
         }
-
     }
 
     public List<Class> getCategories() {
