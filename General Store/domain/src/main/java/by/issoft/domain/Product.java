@@ -3,7 +3,7 @@ package by.issoft.domain;
 import by.issoft.domain.categories.MilkCategory;
 
 public class Product {
-    private final Category name; // поле класса Category или String?
+    private final Category name;
     private final double rate;
     private final int price;
 
@@ -39,4 +39,12 @@ public class Product {
         return price;
     }
 
+    @Override
+    public String toString() {
+        return "[product: " + name + "] [rate: " + rate + "] [price: " + price + "]";
+    }
+
+    public void toprint() {
+        System.out.println(this);
+    }
 }

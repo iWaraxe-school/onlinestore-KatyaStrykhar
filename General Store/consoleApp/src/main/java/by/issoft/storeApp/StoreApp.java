@@ -15,6 +15,7 @@ public class StoreApp {
         BikeCategory bike = new BikeCategory();
 
         Store store = new Store();
+        store.printStore();
 
 
 

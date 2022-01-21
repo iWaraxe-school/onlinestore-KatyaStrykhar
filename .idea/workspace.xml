@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e6af790c-f434-481d-9c9f-05b4cb3f347c" name="Changes" comment="доработала класс Store">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store/consoleApp/src/main/java/by/issoft/storeApp/StoreApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/General Store/consoleApp/src/main/java/by/issoft/storeApp/StoreApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/General Store/domain/src/main/java/by/issoft/domain/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/General Store/domain/src/main/java/by/issoft/domain/Category.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/General Store/domain/src/main/java/by/issoft/domain/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/General Store/domain/src/main/java/by/issoft/domain/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store/domain/src/main/java/by/issoft/domain/categories/BikeCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/General Store/domain/src/main/java/by/issoft/domain/categories/BikeCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store/domain/src/main/java/by/issoft/domain/categories/MilkCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/General Store/domain/src/main/java/by/issoft/domain/categories/MilkCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/General Store/domain/src/main/java/by/issoft/domain/categories/PhoneCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/General Store/domain/src/main/java/by/issoft/domain/categories/PhoneCategory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/General Store/store/src/main/java/by/issoft/store/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/General Store/store/src/main/java/by/issoft/store/Store.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +50,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="23dx31Lbc6epUZfk0HJbW8lkRUd" />
   <component name="ProjectLevelVcsManager">
@@ -69,7 +68,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RunManager">
     <configuration name="StoreApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -157,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642701375495</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="доработала класс Store">
+      <created>1642704856261</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1642704856261</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

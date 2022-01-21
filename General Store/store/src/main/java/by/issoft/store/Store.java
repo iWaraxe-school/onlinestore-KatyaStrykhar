@@ -36,19 +36,13 @@ public class Store {
 
     private void createListProductLists(){
         for ( Class type : categories){
-            /* Reflections reflection = new Reflections(type.getClass());
-            НУЖНА ЭТА СТРОЧКА? */
-            Method getList = null;
             try {
-                getList = type.getMethod ("getProductList");
+                Method getList = type.getDeclaredMethod("getProductList");
+                List<Product> temp = (List<Product>) getList.invoke(type);
+                bigProdList.add(temp);
             } catch (NoSuchMethodException e) {
                 e.printStackTrace();
             }
-            List<Product> temp = null;
-            if (getList != null)
-                temp = (List<Product>) getList.invoke();
-                // Здесь пишет ошибку. Если правильно поняла, то идее не нравятся скобки
-            bigProdList.add(temp);
 
         }
 
@@ -60,5 +54,14 @@ public class Store {
 
     public List<List<Product>> getBigProdList() {
         return bigProdList;
+    }
+
+    public String printStore(){
+        for (List<Product> temp : bigProdList){
+            for (Product tempProd : temp){
+                tempProd.toprint();
+            }
+        }
+
     }
 }
