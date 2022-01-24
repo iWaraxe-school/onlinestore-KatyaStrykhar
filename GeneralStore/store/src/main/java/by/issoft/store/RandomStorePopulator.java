@@ -16,8 +16,6 @@ import by.issoft.domain.Category;
 import by.issoft.domain.Product;
 import com.github.javafaker.Faker;
 
-import java.nio.DoubleBuffer;
-
 public class RandomStorePopulator {
     private Faker faker;
 
@@ -32,9 +30,9 @@ public class RandomStorePopulator {
         int i = 5 + ((int) (Math.random() * 6));
 
         for (int j = 0; j<i; j++){
-            double rate;
-            int price;
-            String name;
+            double rate = 0;
+            int price = 0;
+            String name = null;
             switch (cat){
                 case "milk":
                     name = faker.food().ingredient();
@@ -51,7 +49,7 @@ public class RandomStorePopulator {
                     rate = faker.number().randomDouble(1, 1, 2);
                     price = (int) Math.random()*501;
                     break;
-                default System.out.println("Я не знаю такой категории"); // не самая серьезная обработка ошибок, конечно
+                default: System.out.println("Я не знаю такой категории"); // не самая серьезная обработка ошибок, конечно
             }
             category.putProductToList(new Product(name, rate, price)); //
             }

@@ -6,16 +6,12 @@ package by.issoft.store;
  каждой категории)
 */
 
-import by.issoft.domain.Category;
 import by.issoft.domain.Product;
-import org.reflections.Reflections;
-import org.reflections.scanners.SubTypesScanner;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-
 
 public class Store {
     private final List<Class> categories;
@@ -42,6 +38,10 @@ public class Store {
                 bigProdList.add(temp);
             } catch (NoSuchMethodException e) {
                 e.printStackTrace();
+            } catch (InvocationTargetException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
             }
 
         }
@@ -55,7 +55,7 @@ public class Store {
         return bigProdList;
     }
 
-    public String printStore(){
+    public void printStore(){
         for (List<Product> temp : bigProdList){
             for (Product tempProd : temp){
                 tempProd.toprint();

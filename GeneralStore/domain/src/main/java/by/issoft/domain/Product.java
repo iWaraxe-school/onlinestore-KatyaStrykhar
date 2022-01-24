@@ -6,7 +6,7 @@ public class Product {
     private final int price;
 
 
-    private Product(String name, double rate, int price) {
+    public Product(String name, double rate, int price) {
         this.name = name;
         this.rate = rate;
         this.price = price;
