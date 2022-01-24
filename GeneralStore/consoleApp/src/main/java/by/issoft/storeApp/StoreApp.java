@@ -20,7 +20,8 @@ public class StoreApp {
 
         RandomStorePopulator populator = new RandomStorePopulator();
 
-        populator.toCreate(milk);//create random quantity products with faker
+        //create random quantity products with faker
+        populator.toCreate(milk);
         populator.toCreate(phone);
         populator.toCreate(bike);
 

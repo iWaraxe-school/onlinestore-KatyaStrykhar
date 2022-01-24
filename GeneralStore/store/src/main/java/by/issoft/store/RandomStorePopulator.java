@@ -26,28 +26,29 @@ public class RandomStorePopulator {
     }
 
     public void toCreate(Category category) {
-        String cat = category.getName();
+        Category category1 = (Category) category; //нужно ли приводить входной параметр явно к классу Category?
+        String catName = category1.getName();
         int i = 5 + ((int) (Math.random() * 6));
 
         for (int j = 0; j<i; j++){
             double rate = 0;
             int price = 0;
             String name = null;
-            switch (cat){
+            switch (catName){
                 case "milk":
                     name = faker.food().ingredient();
                     rate = faker.number().randomDouble(1, 1, 5);
-                    price = (int) Math.random()*51;
+                    price = (int) (Math.random()*51);
                     break;
                 case "phone":
                     name = faker.company().name();
                     rate = faker.number().randomDouble(1, 1, 3);
-                    price = (int) Math.random()*951;
+                    price = (int) (Math.random()*951);
                     break;
                 case "bike":
                     name = faker.company().name();
                     rate = faker.number().randomDouble(1, 1, 2);
-                    price = (int) Math.random()*501;
+                    price = (int) (Math.random()*501);
                     break;
                 default: System.out.println("Я не знаю такой категории"); // не самая серьезная обработка ошибок, конечно
             }
