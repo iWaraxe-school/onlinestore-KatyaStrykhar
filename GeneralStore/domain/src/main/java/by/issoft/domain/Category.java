@@ -5,7 +5,7 @@ import java.util.List;
 
 abstract public class Category {
     protected String name;
-    protected final List<Product> productList;
+    protected List<Product> productList;
 
     public Category(String name) {
         this.name = name;
@@ -24,8 +24,4 @@ abstract public class Category {
         productList.add(product);
     }
 
-    @Override
-    public String toString() {
-        return name;
-    }
 }
