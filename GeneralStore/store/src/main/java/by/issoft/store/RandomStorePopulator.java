@@ -52,7 +52,7 @@ public class RandomStorePopulator {
                     break;
                 default: System.out.println("Я не знаю такой категории"); // не самая серьезная обработка ошибок, конечно
             }
-            category.putProductToList(new Product(name, rate, price)); //
+            category.putProductToList(new Product(name, rate, price));
             }
     }
 }

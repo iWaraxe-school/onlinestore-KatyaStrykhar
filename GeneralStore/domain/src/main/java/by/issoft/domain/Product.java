@@ -31,6 +31,6 @@ public class Product {
     }
 
     public void toprint() {
-        System.out.println(this);
+        System.out.println(this.toString());
     }
 }

@@ -7,6 +7,7 @@ package by.issoft.store;
 */
 
 import by.issoft.domain.Product;
+import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -17,18 +18,11 @@ public class Store {
     private final List<Class> categories;
     private final List<List<Product>> bigProdList;
 
-    public Store(StoreHelper helper) {
+    public Store(@NotNull StoreHelper helper) {
         categories = helper.getCategories();
         bigProdList = new ArrayList<List<Product>>();
         this.createListProductLists();
     }
-/*
-    private void createListCategories(){
-        Reflections reflection = new Reflections(Category.getClass(), new SubTypesScanner()); // не могу сообразить, каким указать первый аргумент
-        Set<Class<? extends Category>> subTypes = reflection.getSubTypesOf(Category.class);
-        categories.addAll(subTypes);
-    }
-*/
 
     public void createListProductLists(){
         for ( Class type : categories){
@@ -58,7 +52,7 @@ public class Store {
     public void printStore(){
         for (List<Product> temp : bigProdList){
             for (Product tempProd : temp){
-                tempProd.toprint();
+                System.out.println(tempProd.toString());
             }
         }
 
