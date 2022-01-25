@@ -8,14 +8,15 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 public class StoreHelper {
-    private List<Category> sybTypes;
+    private List<Category> subTypes;
     private Store store;
 
 
     public StoreHelper(Store store) {
-        sybTypes = new ArrayList<Category>();
+        subTypes = new ArrayList<Category>();
         this.store = store;
     }
 
@@ -23,7 +24,7 @@ public class StoreHelper {
         RandomStorePopulator populator = new RandomStorePopulator();
         Random random = new Random();
         this.createProductListToAdd();
-        for(Category entry: sybTypes){
+        for(Category entry: subTypes){
             int j = random.nextInt(10);
             for(int i = 0; i< j; i++){
                 String name = populator.toCreateName(entry.getName());
@@ -38,9 +39,10 @@ public class StoreHelper {
 
     private void createProductListToAdd(){
         Reflections reflection = new Reflections();
-        for (Class<? extends Category> aClass : reflection.getSubTypesOf(Category.class)) {
+        Set <Class<? extends Category>> subTypesCategory = reflection.getSubTypesOf(Category.class);
+        for (Class<? extends Category> aClass : subTypesCategory) {
             try {
-                sybTypes.add(aClass.getConstructor().newInstance());
+                subTypes.add(aClass.getConstructor().newInstance());
             } catch (InstantiationException e) {
                 e.printStackTrace();
             } catch (IllegalAccessException e) {
@@ -50,6 +52,7 @@ public class StoreHelper {
             } catch (NoSuchMethodException e) {
                 e.printStackTrace();
             }
+
         }
     }
 
