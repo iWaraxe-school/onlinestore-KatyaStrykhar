@@ -15,6 +15,7 @@ public class Store {
 
     public void printStore(){
         for (var temp : categoryList){
+            System.out.println("Категория: " + temp.getName());
             for(var prod: temp.getProductList()){
                 prod.toPrint();
             }

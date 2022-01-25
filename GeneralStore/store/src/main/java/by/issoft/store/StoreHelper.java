@@ -3,6 +3,7 @@ package by.issoft.store;
 import by.issoft.domain.Category;
 import by.issoft.domain.Product;
 import org.reflections.Reflections;
+import org.reflections.scanners.SubTypesScanner;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -38,7 +39,7 @@ public class StoreHelper {
     }
 
     private void createProductListToAdd(){
-        Reflections reflection = new Reflections();
+        Reflections reflection = new Reflections("by.issoft.domain.categories", new SubTypesScanner());
         Set <Class<? extends Category>> subTypesCategory = reflection.getSubTypesOf(Category.class);
         for (Class<? extends Category> aClass : subTypesCategory) {
             try {
