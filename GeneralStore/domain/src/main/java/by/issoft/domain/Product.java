@@ -30,7 +30,7 @@ public class Product {
         return "[product: " + name + "] [rate: " + rate + "] [price: " + price + "]";
     }
 
-    public void toprint() {
+    public void toPrint() {
         System.out.println(this.toString());
     }
 }

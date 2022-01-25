@@ -7,7 +7,8 @@ abstract public class Category {
     protected String name;
     protected final List<Product> productList;
 
-    public Category() {
+    public Category(String name) {
+        this.name = name;
         productList = new ArrayList<Product>();
     }
 

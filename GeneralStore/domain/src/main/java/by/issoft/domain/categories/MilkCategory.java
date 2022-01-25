@@ -5,7 +5,7 @@ import by.issoft.domain.Category;
 public class MilkCategory extends Category {
 
     public MilkCategory() {
-        this.name = "milk";
+        super("milk");
     }
 }
 
