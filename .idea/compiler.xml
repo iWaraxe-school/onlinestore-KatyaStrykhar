@@ -14,7 +14,7 @@
     <bytecodeTargetLevel>
       <module name="consoleApp" target="1.5" />
       <module name="domain" target="1.5" />
-      <module name="General Store" target="1.5" />
+      <module name="GeneralStore" target="1.5" />
       <module name="parent" target="1.5" />
       <module name="store" target="1.5" />
     </bytecodeTargetLevel>
