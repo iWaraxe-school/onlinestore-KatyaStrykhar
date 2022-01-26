@@ -12,7 +12,6 @@ public class StoreApp {
         helper.fillStore();
         store.printStore();
     }
-
 }
 
 
