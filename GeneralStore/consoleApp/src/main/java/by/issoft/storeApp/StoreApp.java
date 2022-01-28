@@ -18,34 +18,52 @@ public class StoreApp {
 
         SortStore sorting = new SortStore();//создаем SortStore(при инициализации парсим наш xml, создаем мапу как сортировать по какому полю
 
-        testSorting(store, sorting);
+        //testSorting(store, sorting);
 
+        /*InputStreamReader inputStream = new InputStreamReader(System.in);
+        BufferedInputStream input = new BufferedInputStream(inputStream);
+        String command = input.read();
+
+         */
+        String command = "top";
+
+        switch (command){
+            case "sort":
+                List<Product> sortByName = sorting.toSort(store, "name");
+                System.out.println("\nСортировка по имени");
+                sortByName.stream().forEach(System.out::println);
+                break;
+            case "top":
+                printTop(store, 5);
+                break;
+            case "exit":
+                System. exit(0);
+                break;
+            default: System.out.println("invalid input");
+        }
+
+    }
+
+    public static void printTop(Store store, int i){
+        System.out.println("Top price: ");
+        List<Product> products = store.getListOfAllProducts();
+        products.stream()
+                .limit(i)
+                .forEach(System.out::println);
     }
 
     private static void testSorting(Store store, SortStore sorting) {
         List<Product> sortByName = sorting.toSort(store, "name");
-
-        System.out.println("");
-        System.out.println("Сортировка по имени");
-        for(var prod: sortByName){
-            System.out.println(prod);
-        }
+        System.out.println("\nСортировка по имени");
+        sortByName.stream().forEach(System.out::println);
 
         List<Product> sortByRate = sorting.toSort(store, "rate");
-
-        System.out.println("");
-        System.out.println("Сортировка по ставке");
-        for(var prod: sortByRate){
-            System.out.println(prod);
-        }
+        System.out.println("\nСортировка по ставке");
+        sortByRate.stream().forEach(System.out::println);
 
         List<Product> sortByPrice = sorting.toSort(store, "price");
-
-        System.out.println("");
-        System.out.println("Сортировка по цене");
-        for(var prod: sortByPrice){
-            System.out.println(prod);
-        }
+        System.out.println("\nСортировка по цене");
+        sortByPrice.stream().forEach(System.out::println);
     }
 }
 
