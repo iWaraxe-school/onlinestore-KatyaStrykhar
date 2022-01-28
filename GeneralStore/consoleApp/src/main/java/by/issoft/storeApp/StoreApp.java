@@ -17,15 +17,35 @@ public class StoreApp {
         store.fillAndPrintStore();//создаем одил лист всех продуктов и выводим его на печать
 
         SortStore sorting = new SortStore();//создаем SortStore(при инициализации парсим наш xml, создаем мапу как сортировать по какому полю
-        // sorting.setSort("name") задаем способ сортировки. По умолчанию стоит price asc. Не обязательно устанавливать сразу.
-        List<Product> sortList = sorting.toSort(store);
+
+        testSorting(store, sorting);
+
+    }
+
+    private static void testSorting(Store store, SortStore sorting) {
+        List<Product> sortByName = sorting.toSort(store, "name");
 
         System.out.println("");
-        for(var prod: sortList){
+        System.out.println("Сортировка по имени");
+        for(var prod: sortByName){
             System.out.println(prod);
         }
 
+        List<Product> sortByRate = sorting.toSort(store, "rate");
 
+        System.out.println("");
+        System.out.println("Сортировка по ставке");
+        for(var prod: sortByRate){
+            System.out.println(prod);
+        }
+
+        List<Product> sortByPrice = sorting.toSort(store, "price");
+
+        System.out.println("");
+        System.out.println("Сортировка по цене");
+        for(var prod: sortByPrice){
+            System.out.println(prod);
+        }
     }
 }
 
