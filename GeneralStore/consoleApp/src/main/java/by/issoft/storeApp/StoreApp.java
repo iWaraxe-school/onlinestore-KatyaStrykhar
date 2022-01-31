@@ -5,6 +5,9 @@ import by.issoft.store.SortStore;
 import by.issoft.store.Store;
 import by.issoft.store.StoreHelper;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.List;
 
 public class StoreApp {
@@ -20,12 +23,13 @@ public class StoreApp {
 
         //testSorting(store, sorting);
 
-        /*InputStreamReader inputStream = new InputStreamReader(System.in);
-        BufferedInputStream input = new BufferedInputStream(inputStream);
-        String command = input.read();
-
-         */
-        String command = "top";
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String command = null;
+        try {
+            command = reader.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         switch (command){
             case "sort":
