@@ -8,6 +8,7 @@ import by.issoft.store.StoreHelper;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Comparator;
 import java.util.List;
 
 public class StoreApp {
@@ -49,9 +50,11 @@ public class StoreApp {
     }
 
     public static void printTop(Store store, int i){
+        Comparator<Product> comp = (a, b) -> b.getPrice() - a.getPrice();
         System.out.println("Top price: ");
         List<Product> products = store.getListOfAllProducts();
         products.stream()
+                .sorted(comp)
                 .limit(i)
                 .forEach(System.out::println);
     }
