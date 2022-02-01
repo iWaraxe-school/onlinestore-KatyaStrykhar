@@ -1,76 +1,75 @@
 package by.issoft.store.sorting;
 
 import by.issoft.domain.Product;
-import by.issoft.store.Store;
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
 
-import javax.xml.parsers.DocumentBuilderFactory;
-import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+
+//создаем SortStore(при инициализации парсим наш xml, создаем мапу как сортировать по какому полю
 
 public class SortStore {
-    private Map<String, String> typeMap;
+    private XmlReader reader;
 
     public SortStore() {
-        this.typeMap = new HashMap<>();
-        this.parsingXml();
+        reader = new XmlReader();
     }
 
-    private void parsingXml() {
-        String filePath = "GeneralStore/store/src/main/resources/configFile.xml";
-        File file = new File(filePath);
-        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-        Document doc = null;
-        try {
-            doc = dbf.newDocumentBuilder().parse(file);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        this.fillMap(doc);
-    }
-
-    private void fillMap(Document doc) {
-        Node sortNode = doc.getFirstChild();
-        NodeList sortChild = sortNode.getChildNodes();
-        for (int i = 0; i < sortChild.getLength(); i++) {
-            String nodeName = sortChild.item(i).getNodeName();
-            String textContent = sortChild.item(i).getTextContent();
-            typeMap.put(nodeName, textContent);
-        }
-    }
-
-    public List<Product> toSort(Store store, String how) {
-        List<Product> products = store.getListOfAllProducts();
-        List<Product> sortList = new ArrayList<>();
-        String sorter = how;
-        String type = typeMap.get(sorter);
-
-        Comparator<Product> comp = (a, b) -> b.getPrice() - a.getPrice();
-
-        switch (sorter) {
-            case "name":
-                if (type.equals("asc")) comp = (a, b) -> a.getName().compareTo(b.getName());
-                else if (type.equals("desc")) comp = (a, b) -> b.getName().compareTo(a.getName());
-                break;
-            case "price":
-                if (type.equals("asc")) comp = ((a, b) -> a.getPrice() - b.getPrice());
-                else if (type.equals("desc")) comp = ((a, b) -> b.getPrice() - a.getPrice());
-                break;
-            case "rate":
-                if (type.equals("asc")) comp = (Comparator.comparingDouble(Product::getRate));
-                else if (type.equals("desc")) comp = ((a, b) -> Double.compare(b.getRate(), a.getRate()));
-                break;
-        }
-
+    public List<Product> toSort(List<Product> products) {
+        List<Comparator<Product>> compList = this.createListOfComparators();
+        Comparator<Product> comp = this.createCompForStream(compList);
+        List<Product> sortedList = new ArrayList<>();
         products.stream()
                 .sorted(comp)
-                .forEach(sortList::add);
-        return sortList;
+                .forEach(sortedList::add);
 
-
+        sortedList.forEach(System.out::println);
+        return sortedList;
     }
 
+    private List<Comparator<Product>> createListOfComparators() {
+        Map<String, String> typeSort = reader.getMap();
+        List<Comparator<Product>> compList = new ArrayList<>();
+
+        for(Map.Entry<String, String> type: typeSort.entrySet()) {
+            String key = type.getKey();
+            String value = type.getValue();
+            Comparator<Product> comp = (a, b) -> b.getPrice() - a.getPrice();
+            switch (key) {
+                case "name":
+                    System.out.println(key + " = " + value);
+                    if (value.equals("asc")) comp = (a, b) -> a.getName().compareTo(b.getName());
+                    else if (value.equals("desc")) comp = (a, b) -> b.getName().compareTo(a.getName());
+                    compList.add(comp);
+                    break;
+                case "price":
+                    System.out.println(key + " = " + value);
+                    if (value.equals("asc")) comp = ((a, b) -> a.getPrice() - b.getPrice());
+                    else if (value.equals("desc")) comp = ((a, b) -> b.getPrice() - a.getPrice());
+                    compList.add(comp);
+                    break;
+                case "rate":
+                    System.out.println(key + " = " + value);
+                    if (value.equals("asc")) comp = (Comparator.comparingDouble(Product::getRate));
+                    else if (value.equals("desc")) comp = ((a, b) -> Double.compare(b.getRate(), a.getRate()));
+                    compList.add(comp);
+                    break;
+            }
+        }
+        return compList;
+    }
+
+    private Comparator<Product> createCompForStream(List<Comparator<Product>> compList) {
+
+        Comparator<Product> lastComp = compList.get(compList.size()-1);
+
+        for (int i = compList.size(); i >1; i--){
+            Comparator<Product> preLastComp = compList.get(i-2);
+            Comparator<Product> compComp = preLastComp.thenComparing(lastComp);
+            lastComp = compComp;
+        }
+        return lastComp;
+    }
 }
 

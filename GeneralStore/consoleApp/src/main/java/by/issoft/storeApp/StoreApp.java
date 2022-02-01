@@ -1,6 +1,5 @@
 package by.issoft.storeApp;
 
-import by.issoft.store.sorting.SortStore;
 import by.issoft.store.Store;
 import by.issoft.store.StoreHelper;
 
@@ -14,15 +13,13 @@ public class StoreApp {
         Store store = new Store();
         StoreHelper helper = new StoreHelper(store);
 
-        helper.fillStore();
-        store.fillAndPrintStore();//создаем одил лист всех продуктов и выводим его на печать
-
-        SortStore sorting = new SortStore();//создаем SortStore(при инициализации парсим наш xml, создаем мапу как сортировать по какому полю
+        helper.fillStore();                 //наполняем магазин фейкером
+        store.fillAndPrintStore();          //создаем один лист всех продуктов и выводим его на печать
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         Boolean flag = true;
         while (flag) {
-            System.out.println("Enter command sort/top/exit: ");
+            System.out.println("\nEnter command sort/top/exit: ");
             String command = null;
             try {
                 command = reader.readLine();
@@ -33,9 +30,7 @@ public class StoreApp {
             switch (command) {
                 case "sort":
                     System.out.println("\nSorted products: ");
-                /*List<Product> sortByName = sorting.toSort(store, "name");
-                sortByName.stream().forEach(System.out::println);
-                 */
+                    store.toSort();
                     break;
                 case "top":
                     System.out.println("\nTop products: ");
