@@ -50,7 +50,8 @@ public class Store {
                 .forEach(System.out::println);
     }
 
-    public void toSort() {
-        sortMap.toSort(listOfAllProducts);
+    public List<Product> toSort() {
+        List<Product> sortedList = sortMap.toSort(listOfAllProducts);
+        return sortedList; //возвращает отсортированный лист. Если дальше он нужен будет
     }
 }
