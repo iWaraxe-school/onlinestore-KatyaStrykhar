@@ -1,6 +1,7 @@
-package by.issoft.store;
+package by.issoft.store.sorting;
 
 import by.issoft.domain.Product;
+import by.issoft.store.Store;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;

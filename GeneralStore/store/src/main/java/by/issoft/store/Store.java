@@ -4,6 +4,7 @@ import by.issoft.domain.Category;
 import by.issoft.domain.Product;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Store {
@@ -19,6 +20,11 @@ public class Store {
         return listOfAllProducts;
     }
 
+    public void printListOfProducts(){
+        listOfAllProducts.stream()
+                .forEach(Product::toPrint);
+    }
+
     public void addCategory (Category category){
         categoryList.add(category);
     }
@@ -26,10 +32,16 @@ public class Store {
     public void fillAndPrintStore(){
         for (var temp : categoryList){
             System.out.println("Категория: " + temp.getName());
-            for(var prod: temp.getProductList()){
-                prod.toPrint();
-                listOfAllProducts.add(prod);
-            }
+            listOfAllProducts.addAll(temp.getProductList());
         }
+        this.printListOfProducts();
+    }
+
+    public void printTop() {
+        Comparator<Product> comp = (a, b) -> b.getPrice() - a.getPrice();
+        this.getListOfAllProducts().stream()
+                .sorted(comp)
+                .limit(5)
+                .forEach(System.out::println);
     }
 }
