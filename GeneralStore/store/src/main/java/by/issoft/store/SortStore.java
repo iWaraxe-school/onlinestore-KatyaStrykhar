@@ -53,7 +53,6 @@ public class SortStore {
                 if (type.equals("asc")) comp = (a, b) -> a.getName().compareTo(b.getName());
                 else if (type.equals("desc")) comp = (a, b) -> b.getName().compareTo(a.getName());
                 break;
-
             case "price":
                 if (type.equals("asc")) comp = ((a, b) -> a.getPrice() - b.getPrice());
                 else if (type.equals("desc")) comp = ((a, b) -> b.getPrice() - a.getPrice());
