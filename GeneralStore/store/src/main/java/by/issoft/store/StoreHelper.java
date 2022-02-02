@@ -26,7 +26,7 @@ public class StoreHelper {
         Random random = new Random();
         this.createProductListToAdd();
         for(Category entry: subTypes){
-            int j = random.nextInt(10);
+            int j = (10 + random.nextInt(10));
             for(int i = 0; i< j; i++){
                 String name = populator.toCreateName(entry.getName());
                 Double rate = populator.toCreateRate();
