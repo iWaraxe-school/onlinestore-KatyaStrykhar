@@ -1,7 +1,6 @@
 package by.issoft.storeApp;
 
 import by.issoft.store.Store;
-import by.issoft.store.StoreHelper;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,11 +9,11 @@ import java.io.InputStreamReader;
 public class StoreApp {
     public static void main(String[] args) {
 
-        Store store = new Store();
-        StoreHelper helper = new StoreHelper(store);
+        Store store = Store.getStore();
 
-        helper.fillStore();                 //наполняем магазин фейкером
-        store.fillAndPrintStore();          //создаем один лист всех продуктов и выводим его на печать
+        store.fillStore();                 //наполняем магазин фейкером
+
+        store.listAndPrintStore();          //создаем один лист всех продуктов и выводим его на печать
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         Boolean flag = true;

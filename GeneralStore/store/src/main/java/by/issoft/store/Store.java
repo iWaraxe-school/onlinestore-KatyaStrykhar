@@ -9,15 +9,24 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Store {
+    private static Store store;
     private List<Category> categoryList;
     private List<Product> listOfAllProducts;
     private SortStore sortMap;
+    private StoreHelper helper;
 
-    public Store() {
+    private Store() {
         categoryList = new ArrayList<>();
         listOfAllProducts = new ArrayList<>();
         sortMap = new SortStore();
+        helper = new StoreHelper(this);
     }
+
+    public static Store getStore() {
+        if (store == null) {store = new Store();}
+        return store;
+    }
+
 
     public List<Product> getListOfAllProducts() {
         return listOfAllProducts;
@@ -32,7 +41,7 @@ public class Store {
         categoryList.add(category);
     }
 
-    public void fillAndPrintStore(){
+    public void listAndPrintStore(){
         for (var temp : categoryList){
             System.out.println("Категория: " + temp.getName());
             listOfAllProducts.addAll(temp.getProductList());
@@ -53,5 +62,9 @@ public class Store {
     public List<Product> toSort() {
         List<Product> sortedList = sortMap.toSort(listOfAllProducts);
         return sortedList; //возвращает отсортированный лист. Если дальше он нужен будет
+    }
+
+    public void fillStore() {
+        helper.fillStore();
     }
 }
