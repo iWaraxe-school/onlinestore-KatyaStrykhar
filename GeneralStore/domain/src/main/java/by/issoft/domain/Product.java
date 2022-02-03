@@ -27,7 +27,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "[product: " + name + "] [rate: " + rate + "] [price: " + price + "]";
+        return name + " [rate: " + rate + "] [price: " + price + "]";
     }
 
     public void toPrint() {

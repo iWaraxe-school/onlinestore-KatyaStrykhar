@@ -1,14 +1,14 @@
-package by.issoft.store;
+package by.issoft.store.populator;
 
 import com.github.javafaker.Faker;
 
-public class RandomStorePopulator {
+public class RandomStorePopulator implements Populator {
     private Faker faker;
-
 
     public RandomStorePopulator() {faker = new Faker();}
 
-    public String toCreateName(String categoryName) {
+    @Override
+    public String createName(String categoryName) {
         String ret = null;
         switch (categoryName){
                 case "milk":
@@ -26,12 +26,11 @@ public class RandomStorePopulator {
             return ret;
     }
 
-    public Double toCreateRate(){
-        return faker.number().randomDouble(1, 1, 5);
-    }
-    public int toCreatePrice(){
-        return (int) (Math.random()*100);
-    }
+    @Override
+    public Double createRate(){ return faker.number().randomDouble(1, 1, 5);}
+
+    @Override
+    public int createPrice(){ return (int) (Math.random()*100); }
 }
 
 

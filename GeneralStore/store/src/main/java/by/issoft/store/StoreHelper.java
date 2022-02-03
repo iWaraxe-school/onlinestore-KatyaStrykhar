@@ -2,6 +2,8 @@ package by.issoft.store;
 
 import by.issoft.domain.Category;
 import by.issoft.domain.Product;
+import by.issoft.store.populator.Populator;
+import by.issoft.store.populator.RandomStorePopulator;
 import org.reflections.Reflections;
 import org.reflections.scanners.SubTypesScanner;
 
@@ -22,15 +24,15 @@ public class StoreHelper {
     }
 
     public void fillStore(){
-        RandomStorePopulator populator = new RandomStorePopulator();
+        Populator populator = new RandomStorePopulator();
         Random random = new Random();
         this.createProductListToAdd();
         for(Category entry: subTypes){
-            int j = (10 + random.nextInt(10));
+            int j = (10 + random.nextInt(20));
             for(int i = 0; i< j; i++){
-                String name = populator.toCreateName(entry.getName());
-                Double rate = populator.toCreateRate();
-                int price = populator.toCreatePrice();
+                String name = (populator.createName(entry.getName()) + " [" + entry.getName() + "]");
+                Double rate = populator.createRate();
+                int price = populator.createPrice();
                 Product product = new Product(name, rate, price);
                 entry.putProductToList(product);
             }
