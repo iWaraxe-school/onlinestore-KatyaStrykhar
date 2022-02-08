@@ -1,6 +1,7 @@
 package by.issoft.store.ordering;
 
 import by.issoft.domain.Product;
+import lombok.SneakyThrows;
 
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
@@ -17,13 +18,10 @@ public class SelectOrder implements Runnable{
         this.purchasedGoods = purchasedGoods;
     }
 
+    @SneakyThrows
     @Override
-    public void run() {
-        try {
-            TimeUnit.SECONDS.sleep(random);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    public void run()  {
+        TimeUnit.SECONDS.sleep(random);
         products.forEach(purchasedGoods::add);
         System.out.println("Ваш заказ:");
         for (Product purchasedGood : purchasedGoods) {
