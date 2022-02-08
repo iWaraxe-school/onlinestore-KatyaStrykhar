@@ -52,8 +52,12 @@ public class Store {
         categoryList.add(category);
     }
 
+    public List<Category> getCategoryList() {
+        return categoryList;
+    }
+
     public void listAndPrintStore(){
-        for (var temp : categoryList){
+        for (Category temp : categoryList){
             System.out.println("Категория: " + temp.getName());
             listOfAllProducts.addAll(temp.getProductList());
             for(Product prod: temp.getProductList()){
@@ -86,7 +90,7 @@ public class Store {
     }
 
     public void toStart() {
-        this.fillStore();                     //наполняем магазин фейкером
+        this.fillStore();                     //наполняем магазин фейкером или DB
         this.listAndPrintStore();             //создаем один лист всех продуктов и выводим его на печать
         this.cleanerPurcheses();              //запускаем клинер (интервал 2 минуты)
         orders = new ArrayList<>();           //создаем лист заказов

@@ -1,36 +1,19 @@
 package by.issoft.store.populator;
 
-import com.github.javafaker.Faker;
+import by.issoft.store.Store;
 
-public class RandomStorePopulator implements Populator {
-    private Faker faker;
+public class RandomStorePopulator extends Populator {
 
-    public RandomStorePopulator() {faker = new Faker();}
-
-    @Override
-    public String createName(String categoryName) {
-        String ret = null;
-        switch (categoryName){
-                case "milk":
-                    ret = faker.food().ingredient();
-                    break;
-                case "phone":
-                    ret = faker.company().name();
-                    break;
-                case "bike":
-                    ret = faker.company().name();
-                    break;
-                default:
-                    throw new IllegalStateException("Unexpected value: " + categoryName);
-            }
-            return ret;
+    public RandomStorePopulator(Store store) {
+        super(store);
     }
 
     @Override
-    public Double createRate(){ return faker.number().randomDouble(1, 1, 5);}
+    public void fillStoreWithPopulator() {
+        this.createSubTypesList(); //заполняем лист существующими категориями
+        this.generateProducts(); //генерируем продукты и заполняем листы продуктов
+    }
 
-    @Override
-    public int createPrice(){ return (int) (Math.random()*100); }
 }
 
 
