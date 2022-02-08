@@ -11,14 +11,12 @@ public class StoreApp {
 
         Store store = Store.getStore();
 
-        store.fillStore();                 //наполняем магазин фейкером
-
-        store.listAndPrintStore();          //создаем один лист всех продуктов и выводим его на печать
+        store.toStart();
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         Boolean flag = true;
         while (flag) {
-            System.out.println("\nEnter command sort/top/exit: ");
+            System.out.println("\nEnter command sort/top/exit/new order: ");
             String command = null;
             try {
                 command = reader.readLine();
@@ -39,9 +37,13 @@ public class StoreApp {
                     flag = false;
                     System.exit(0);
                     break;
+                case "new order":
+                    store.addOrder();
+                    break;
                 default:
                     System.out.println("invalid input");
             }
+
         }
     }
 }
