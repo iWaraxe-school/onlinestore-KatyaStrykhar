@@ -1,24 +1,17 @@
 package by.issoft.storeApp;
 
 import by.issoft.store.Store;
-import by.issoft.store.ordering.Order;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
 
 public class StoreApp {
     public static void main(String[] args) {
 
         Store store = Store.getStore();
 
-        store.fillStore();                 //наполняем магазин фейкером
-
-        store.listAndPrintStore();          //создаем один лист всех продуктов и выводим его на печать
-
-        List<Order> orders = new ArrayList<>(); //создаем лист заказов
+        store.toStart();
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         Boolean flag = true;
@@ -45,8 +38,7 @@ public class StoreApp {
                     System.exit(0);
                     break;
                 case "new order":
-                    orders.add(new Order(store));
-                    flag = false;
+                    store.addOrder();
                     break;
                 default:
                     System.out.println("invalid input");

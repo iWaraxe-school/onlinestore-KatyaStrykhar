@@ -24,8 +24,8 @@ public class SelectOrder implements Runnable{
         TimeUnit.SECONDS.sleep(random);
         products.forEach(purchasedGoods::add);
         System.out.println("Ваш заказ:");
-        for (Product purchasedGood : purchasedGoods) {
-            System.out.println(purchasedGood);
+        for (Product product : products) {
+            System.out.println(product);
         }
     }
 }
