@@ -28,13 +28,13 @@ abstract public class Populator {
         String ret = null;
         switch (categoryName){
             case "milk":
-                ret = faker.food().ingredient();
+                ret = faker.food().ingredient().replace("'", "");
                 break;
             case "phone":
-                ret = faker.company().name();
+                ret = faker.animal().name().replace("'", "");
                 break;
             case "bike":
-                ret = faker.company().name();
+                ret = faker.book().title().replace("'", "");
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + categoryName);
@@ -66,7 +66,7 @@ abstract public class Populator {
             Random random = new Random();
             int j = (10 + random.nextInt(20));
             for(int i = 0; i< j; i++){
-                String name = (this.createName(entry.getName()) + " [" + entry.getName() + "]");
+                String name = (this.createName(entry.getName()));
                 Double rate = this.createRate();
                 int price = this.createPrice();
                 Product product = new Product(name, rate, price);

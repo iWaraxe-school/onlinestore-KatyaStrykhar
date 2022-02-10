@@ -12,11 +12,8 @@ public class StoreHelper {
     }
 
     public void fillStore(){
-        //Меняем рандомстор на DBPopulator
-
         //Populator populator = new RandomStorePopulator(store);
         Populator populator = new DBPopulator(store);
-
         populator.fillStoreWithPopulator();
     }
 

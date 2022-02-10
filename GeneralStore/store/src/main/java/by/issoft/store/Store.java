@@ -34,6 +34,13 @@ public class Store {
         return store;
     }
 
+    public void toStart() {
+        this.fillStore();                     //наполняем магазин фейкером или DB
+        this.listAndPrintStore();             //создаем один лист всех продуктов и выводим его на печать
+        this.cleanerPurcheses();              //запускаем клинер (интервал 2 минуты)
+        orders = new ArrayList<>();           //создаем лист заказов
+
+    }
 
     public List<Product> getListOfAllProducts() {
         return listOfAllProducts;
@@ -86,14 +93,6 @@ public class Store {
     public void cleanerPurcheses() {
         Thread cleanUp = new Thread(new CleanUp(purchasedGoods));
         cleanUp.start();
-
-    }
-
-    public void toStart() {
-        this.fillStore();                     //наполняем магазин фейкером или DB
-        this.listAndPrintStore();             //создаем один лист всех продуктов и выводим его на печать
-        this.cleanerPurcheses();              //запускаем клинер (интервал 2 минуты)
-        orders = new ArrayList<>();           //создаем лист заказов
 
     }
 
