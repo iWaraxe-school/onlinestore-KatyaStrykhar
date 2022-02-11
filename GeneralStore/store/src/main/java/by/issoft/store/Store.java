@@ -20,6 +20,7 @@ public class Store {
     private StoreHelper helper;
     private final BlockingQueue<Product> purchasedGoods;
     private List<Order> orders;
+    private boolean useDB;
 
     private Store() {
         categoryList = new ArrayList<>();
@@ -27,6 +28,7 @@ public class Store {
         sortMap = new SortStore();
         helper = new StoreHelper(this);
         purchasedGoods = new ArrayBlockingQueue<>(1024);
+        useDB = false;
     }
 
     public static Store getStore() {
@@ -34,6 +36,13 @@ public class Store {
         return store;
     }
 
+    public void toStart() {
+        helper.fillStore(useDB);              //наполняем магазин фейкером или DB
+        this.listAndPrintStore();             //создаем один лист всех продуктов и выводим его на печать
+        this.cleanerPurcheses();              //запускаем клинер (интервал 2 минуты)
+        orders = new ArrayList<>();           //создаем лист заказов
+
+    }
 
     public List<Product> getListOfAllProducts() {
         return listOfAllProducts;
@@ -52,8 +61,12 @@ public class Store {
         categoryList.add(category);
     }
 
+    public List<Category> getCategoryList() {
+        return categoryList;
+    }
+
     public void listAndPrintStore(){
-        for (var temp : categoryList){
+        for (Category temp : categoryList){
             System.out.println("Категория: " + temp.getName());
             listOfAllProducts.addAll(temp.getProductList());
             for(Product prod: temp.getProductList()){
@@ -75,25 +88,17 @@ public class Store {
         return sortedList; //возвращает отсортированный лист. Если дальше он нужен будет
     }
 
-    public void fillStore() {
-        helper.fillStore();
-    }
-
     public void cleanerPurcheses() {
         Thread cleanUp = new Thread(new CleanUp(purchasedGoods));
         cleanUp.start();
 
     }
 
-    public void toStart() {
-        this.fillStore();                     //наполняем магазин фейкером
-        this.listAndPrintStore();             //создаем один лист всех продуктов и выводим его на печать
-        this.cleanerPurcheses();              //запускаем клинер (интервал 2 минуты)
-        orders = new ArrayList<>();           //создаем лист заказов
-
-    }
-
     public void addOrder() {
         orders.add(new Order(listOfAllProducts, purchasedGoods));
     }
+
+    public void useDB() { useDB = true; }
+
+    public void useRandomPopulator(){ useDB = false;}
 }
