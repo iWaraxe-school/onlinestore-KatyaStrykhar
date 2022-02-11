@@ -68,14 +68,14 @@ public class DBPopulator extends Populator{
 
         try (Connection con = DriverManager.getConnection("jdbc:h2:mem:database")){
             try (Statement stmt = con.createStatement()){
-                String createCategoryTable = "CREATE TABLE CATEGORY (id INT NOT NULL AUTO_INCREMENT, name VARCHAR(100));";
+                String createCategoryTable = "CREATE TABLE CATEGORY (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100));";
                 stmt.execute(createCategoryTable);
                 for(Category entry: subTypes) {
                     String dataQuery = "INSERT INTO CATEGORY (name) VALUES('" + entry.getName() + "');";
                     stmt.execute(dataQuery);
                 }
 
-                String createProductsTable = "CREATE TABLE PRODUCTS (id INT NOT NULL AUTO_INCREMENT, name VARCHAR(100), rate DOUBLE, price INT, categoryName VARCHAR(100));";
+                String createProductsTable = "CREATE TABLE PRODUCTS (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100), rate DOUBLE, price INT, categoryName VARCHAR(100));";
                 stmt.execute(createProductsTable);
                 for(Map.Entry<Product, Category> entry: mapOfProducts.entrySet()) {
                     String name = entry.getKey().getName();
@@ -86,7 +86,7 @@ public class DBPopulator extends Populator{
                     stmt.execute(dataQuery);
                 }
 
-                //this.printDB(); при вызове отсюда метод работает
+                //this.printDB(); //при вызове отсюда метод работает
             }
         } catch (SQLException e) {
             e.printStackTrace();
