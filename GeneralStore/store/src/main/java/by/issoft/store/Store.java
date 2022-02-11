@@ -20,6 +20,7 @@ public class Store {
     private StoreHelper helper;
     private final BlockingQueue<Product> purchasedGoods;
     private List<Order> orders;
+    private boolean useDB;
 
     private Store() {
         categoryList = new ArrayList<>();
@@ -27,6 +28,7 @@ public class Store {
         sortMap = new SortStore();
         helper = new StoreHelper(this);
         purchasedGoods = new ArrayBlockingQueue<>(1024);
+        useDB = false;
     }
 
     public static Store getStore() {
@@ -35,7 +37,7 @@ public class Store {
     }
 
     public void toStart() {
-        this.fillStore();                     //наполняем магазин фейкером или DB
+        helper.fillStore(useDB);              //наполняем магазин фейкером или DB
         this.listAndPrintStore();             //создаем один лист всех продуктов и выводим его на печать
         this.cleanerPurcheses();              //запускаем клинер (интервал 2 минуты)
         orders = new ArrayList<>();           //создаем лист заказов
@@ -86,10 +88,6 @@ public class Store {
         return sortedList; //возвращает отсортированный лист. Если дальше он нужен будет
     }
 
-    public void fillStore() {
-        helper.fillStore();
-    }
-
     public void cleanerPurcheses() {
         Thread cleanUp = new Thread(new CleanUp(purchasedGoods));
         cleanUp.start();
@@ -99,4 +97,8 @@ public class Store {
     public void addOrder() {
         orders.add(new Order(listOfAllProducts, purchasedGoods));
     }
+
+    public void useDB() { useDB = true; }
+
+    public void useRandomPopulator(){ useDB = false;}
 }

@@ -19,7 +19,6 @@ public class DBPopulator extends Populator{
         this.createSubTypesList(); //заполняем лист существующими категориями
         this.generateProducts(); //генерируем продукты и заполняем листы продуктов
         this.writeToDB();
-        //если вызвать printDB() отсюда, то пишет, что таблица пуста. Я поняла, что когда закрываем Connection, база данных удаляется?
     }
 
     private void printDB() {
@@ -86,7 +85,7 @@ public class DBPopulator extends Populator{
                     stmt.execute(dataQuery);
                 }
 
-                //this.printDB(); //при вызове отсюда метод работает
+                //this.printDB();
             }
         } catch (SQLException e) {
             e.printStackTrace();

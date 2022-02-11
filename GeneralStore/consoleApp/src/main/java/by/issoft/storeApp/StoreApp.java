@@ -11,6 +11,8 @@ public class StoreApp {
 
         Store store = Store.getStore();
 
+        store.useDB(); //по умолчанию выбрана консоль
+
         store.toStart();
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
