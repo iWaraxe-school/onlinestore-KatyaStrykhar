@@ -2,6 +2,7 @@ package by.issoft.store;
 
 import by.issoft.domain.Category;
 import by.issoft.domain.Product;
+import by.issoft.store.http.HttpClient;
 import by.issoft.store.ordering.CleanUp;
 import by.issoft.store.ordering.Order;
 import by.issoft.store.sorting.SortStore;
@@ -37,7 +38,9 @@ public class Store {
     }
 
     public void toStart() {
-        helper.fillStore(useDB);              //наполняем магазин фейкером или DB
+        //helper.fillStore(useDB);              //наполняем магазин фейкером или DB
+        //перегружаем метод fillStore
+        helper.fillStore(new HttpClient());     //создаем HttpClient для получения списка продуктов через http протокол
         this.listAndPrintStore();             //создаем один лист всех продуктов и выводим его на печать
         this.cleanerPurcheses();              //запускаем клинер (интервал 2 минуты)
         orders = new ArrayList<>();           //создаем лист заказов
