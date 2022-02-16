@@ -1,43 +1,27 @@
 package by.issoft.store.http;
 
-import by.issoft.domain.Product;
 import by.issoft.store.Store;
-
-
-import java.math.BigInteger;
-import java.nio.charset.StandardCharsets;
-import java.util.List;
+import io.restassured.RestAssured;
 
 public class HttpClient {
-    Store store;
-    String login;
-    String password;
+    private Store store;
+    public static final String USERNAME = "user";
+    public static final String PASSWORD = "password";
 
-    public HttpClient() {}
-
-    public List<Product> getListOfProducts(Store store) {
-        this.store = store;
-        login = "Aladdin";
-        password = "open sesame";
-        String logoPass = login + ":" + password;
-
-        //кодируем логоПароль
-
-
-        //здесь открываем соединение и отправляем запрос GET на сервер (класс HttpServer) и в store записываем возвращаемый лист продуктов
+    public HttpClient() {
+        store = Store.getStore();
+        store.cleanerPurcheses();              //запускаем клинер (интервал 2 минуты)
 
     }
 
-
-    public void addToCart(){
-
-        //отправляем запрос на сервер "положить в корзину", там формируется заказ new Order()
-        //вся логика метода Store.addOrder() переносится в HttpServer
-
+    public void getProductsList() {
+        RestAssured.given().auth().basic(USERNAME, PASSWORD).when().get("http://localhost:8080/products")
+                .then().log().body();
     }
 
-
-
-
+    public void addToCart() {
+        RestAssured.given().auth().basic(USERNAME, PASSWORD).when().get("http://localhost:8080/cart")
+                .then().log().body();
+    }
 
 }

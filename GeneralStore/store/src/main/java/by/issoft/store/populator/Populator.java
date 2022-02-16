@@ -17,11 +17,13 @@ abstract public class Populator {
     protected Faker faker;
     protected List<Category> subTypes;
     protected Store store;
+    protected List<Product> prodList;
 
-    public Populator(Store store) {
+    public Populator() {
         faker = new Faker();
         this.subTypes = new ArrayList<>();
-        this.store = store;
+        this.store = Store.getStore();
+        prodList = new ArrayList<>();
     }
 
     protected String createName(String categoryName){
@@ -71,6 +73,7 @@ abstract public class Populator {
                 int price = this.createPrice();
                 Product product = new Product(name, rate, price);
                 entry.putProductToList(product);
+                prodList.add(product);
             }
             store.addCategory(entry);
         }
