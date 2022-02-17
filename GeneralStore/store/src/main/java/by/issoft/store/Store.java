@@ -6,9 +6,7 @@ import by.issoft.store.ordering.CleanUp;
 import by.issoft.store.ordering.Order;
 import by.issoft.store.sorting.SortStore;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
@@ -22,6 +20,7 @@ public class Store {
     private List<Order> orders;
     private boolean useDB;
 
+
     private Store() {
         categoryList = new ArrayList<>();
         listOfAllProducts = new ArrayList<>();
@@ -29,6 +28,7 @@ public class Store {
         helper = new StoreHelper(this);
         purchasedGoods = new ArrayBlockingQueue<>(1024);
         useDB = false;
+        orders = new ArrayList<>();
     }
 
     public static Store getStore() {
@@ -40,7 +40,6 @@ public class Store {
         helper.fillStore(useDB);              //наполняем магазин фейкером или DB
         this.listAndPrintStore();             //создаем один лист всех продуктов и выводим его на печать
         this.cleanerPurcheses();              //запускаем клинер (интервал 2 минуты)
-        orders = new ArrayList<>();           //создаем лист заказов
 
     }
 
@@ -98,7 +97,27 @@ public class Store {
         orders.add(new Order(listOfAllProducts, purchasedGoods));
     }
 
+    public void addOrderHttp (Product product) {purchasedGoods.add(product);}
+
+    /*
+    public void setOrders(Order order) {
+        orders = orders.add(order);
+    }*/
+
     public void useDB() { useDB = true; }
 
     public void useRandomPopulator(){ useDB = false;}
+
+    public Product getRandomProduct() {
+        List<Product> list = new ArrayList<>();
+        for (Category temp : categoryList){
+            list.addAll(temp.getProductList());
+        }
+        Product any = list.stream().findAny().get();
+        return any;
+    }
+
+    public String purToString() {
+        return purchasedGoods.toString();
+    }
 }

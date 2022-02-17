@@ -12,8 +12,8 @@ public class StoreHelper {
     public StoreHelper(Store store) {this.store = store;}
 
     public void fillStore(boolean useDB){
-        if (useDB) { populator = new DBPopulator(store);}
-        else {populator = new RandomStorePopulator(store);}
+        if (useDB) {populator = new DBPopulator();}
+        else {populator = new RandomStorePopulator();}
         populator.fillStoreWithPopulator();
     }
 

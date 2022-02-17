@@ -26,8 +26,8 @@ public class Order {
 
         //выбираем рандомные 10 продуктов и кидаем их в лист продуктов
         products = listOfProducts.stream()
-                .limit(10)                                                                      //или сколько угодно
-                .map( i -> listOfProducts.get(random.nextInt(listOfProducts.size()-1)) )  //наверное есть более красивое решение
+                .limit(listOfProducts.size())                                                                      //или сколько угодно
+                .map( i -> listOfProducts.get(random.nextInt(listOfProducts.size()-1)) )
                 .collect(Collectors.toList());
 
 

@@ -2,17 +2,12 @@ package by.issoft.store.populator;
 
 import by.issoft.domain.Category;
 import by.issoft.domain.Product;
-import by.issoft.store.Store;
 
 import java.sql.*;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class DBPopulator extends Populator{
-
-    public DBPopulator(Store store) {
-        super(store);
-    }
 
     @Override
     public void fillStoreWithPopulator() {
